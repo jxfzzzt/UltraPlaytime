@@ -99,11 +99,11 @@ public class MessageUtils {
             message = colorized(message);
             if(message.contains("{next-page}") && message.contains("{prev-page}")){
                 previousPage.addExtra(nextPage);
-                player.spigot().sendMessage(previousPage);
+//                player.spigot().sendMessage(previousPage);
             }else if (message.contains("{prev-page}")) {
-                player.spigot().sendMessage(previousPage);
+//                player.spigot().sendMessage(previousPage);
             } else if (message.contains("{next-page}")) {
-                player.spigot().sendMessage(nextPage);
+//                player.spigot().sendMessage(nextPage);
             }else{
                 message = PlaceholderAPI.setPlaceholders(player, message);
                 player.sendMessage(message);
@@ -115,10 +115,10 @@ public class MessageUtils {
     public void sendTitle(String upperTitle, String subTitle, final Player target){
         upperTitle = colorized(upperTitle);
         subTitle = colorized(subTitle);
-        target.sendTitle(
-                upperTitle,
-                subTitle
-        );
+//        target.sendTitle(
+//                upperTitle,
+//                subTitle
+//        );
     }
 
     public String replacePlaceholders(String text, List<Placeholder> placeholders){

@@ -1,7 +1,5 @@
 package net.pinodev.ultraplaytime.migration;
 
-import com.Zrips.CMI.CMI;
-import com.Zrips.CMI.Containers.CMIUser;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.pinodev.ultraplaytime.configs.files.Locale;
@@ -37,10 +35,10 @@ public class CMIProvider extends Provider{
     public void executeMigration(CommandSender executor) {
         UtilsManager.message.send(Locale.MIGRATION_STARTED, executor, null);
         Map<UUID, Long> pendingUsers = new HashMap<>();
-        for(OfflinePlayer player : Bukkit.getOfflinePlayers()){
-            CMIUser user = CMI.getInstance().getPlayerManager().getUser(player);
-            pendingUsers.put(user.getUniqueId(), user.getTotalPlayTime());
-        }
+//        for(OfflinePlayer player : Bukkit.getOfflinePlayers()){
+//            CMIUser user = CMI.getInstance().getPlayerManager().getUser(player);
+//            pendingUsers.put(user.getUniqueId(), user.getTotalPlayTime());
+//        }
         try(Connection conn = Database.getConnection();
             PreparedStatement ps = conn.prepareStatement(SAVE_USER_DATA.getStatement())){
             int batchSize = 0;
